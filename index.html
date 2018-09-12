@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Kimochi for Uploader</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="icon" href="/wp-content/uploads/2017/04/cropped-bklackcatf_by_daieny-d89uhcj-1-150x150.png" sizes="32x32">
+    <link rel="icon" href="/wp-content/uploads/2017/04/cropped-bklackcatf_by_daieny-d89uhcj-1-270x270.png" sizes="192x192">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body style="background-color: #333333">
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+    <a class="navbar-brand" href="index.html">Home</a>
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" href="guide.html" target="_blank">Guide</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="release.html" target="_blank">Release</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="https://www.facebook.com/100018623917295" target="_blank">Contact</a>
+        </li>
+    </ul>
+</nav>
+
+<div class="container">
+    <div id="main-image" class="m-3" style="padding-top: 50px">
+        <a href="https://kimochi.info/" target="_blank">
+            <img src="https://kimochi.info/wp-content/uploads/2018/09/260x52.png" class="img-fluid rounded mx-auto d-block" alt="Kimochi.Info">
+        </a>
+    </div><hr>
+
+    <div id="content" class="text-white m-3">
+        <form method="post" action="result.php">
+            <div class="row">
+                <div class="col-12">
+                    <div class="form-group">
+                        <label for="thumbnail">Thumbnail:</label><span class="text-danger"> *</span>
+                        <input type="text" id="thumbnail" name="thumbnail" class="form-control" placeholder="Thumbnail URL" required>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <div class="form-group">
+                        <label for="story">Story:</label><span class="text-danger"> *</span>
+                        <textarea id="story" name="story" class="form-control" placeholder="Game story" rows="6" required></textarea>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="form-group">
+                        <label for="hcg">HCGs:</label>
+                        <textarea id="hcg" name="hcg" class="form-control" placeholder="URL 1&#10;URL 2&#10;URL 3&#10;..." rows="6"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <div class="form-group">
+                        <label for="title">Original title (JP):</label>
+                        <input type="text" id="title" name="title" class="form-control" placeholder="JP title">
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="form-group">
+                        <label for="developer">Developer:</label><span class="text-danger"> *</span>
+                        <input type="text" id="developer" name="developer" class="form-control" placeholder="Game developer" required>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="form-group">
+                        <label for="release">Release date:</label><span class="text-danger"> *</span>
+                        <input type="date" id="release" name="release" class="form-control" required>
+                    </div>
+                </div>
+                <div class="col-1">
+                    <div class="form-group">
+                        <label for="version">Version:</label>
+                        <input type="text" id="version" name="version" class="form-control" placeholder="1.0">
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="form-group">
+                        <label for="censorship">Censorship:</label>
+                        <select class="form-control" id="censorship" name="censorship">
+                            <option>Censored</option>
+                            <option>Uncensored</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-6">
+                    <label>Language:</label><br>
+                    <div class="form-check-inline">
+                        <label class="form-check-label">
+                            <input type="checkbox" class="form-check-input" name="language[]" value="English">English
+                        </label>
+                    </div>
+                    <div class="form-check-inline">
+                        <label class="form-check-label">
+                            <input type="checkbox" class="form-check-input" name="language[]" value="Japanese">Japanese
+                        </label>
+                    </div>
+                    <div class="form-check-inline">
+                        <label class="form-check-label">
+                            <input type="checkbox" class="form-check-input" name="language[]" value="Vietnamese">Vietnamese
+                        </label>
+                    </div>
+                    <div class="form-check-inline">
+                        <label class="form-check-label">
+                            <input type="checkbox" class="form-check-input" name="language[]" value="Chinese">Chinese
+                        </label>
+                    </div>
+                    <div class="form-check-inline">
+                        <label class="form-check-label">
+                            <input type="checkbox" class="form-check-input" name="language[]" value="Korean">Korean
+                        </label>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <label>OS platform:</label><br>
+                    <div class="form-check-inline">
+                        <label class="form-check-label">
+                            <input type="checkbox" class="form-check-input" name="platform[]" value="Windows">Windows
+                        </label>
+                    </div>
+                    <div class="form-check-inline">
+                        <label class="form-check-label">
+                            <input type="checkbox" class="form-check-input" name="platform[]" value="Android">Android
+                        </label>
+                    </div>
+                    <div class="form-check-inline">
+                        <label class="form-check-label">
+                            <input type="checkbox" class="form-check-input" name="platform[]" value="MacOS">MacOS
+                        </label>
+                    </div>
+                    <div class="form-check-inline">
+                        <label class="form-check-label">
+                            <input type="checkbox" class="form-check-input" name="platform[]" value="iOS">iOS
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <label for="main-name">Download:</label><span class="text-danger"> *</span>
+                    <span id="add-row" class="btn btn-warning offset-2">Add row (10)</span>
+                    <span id="remove-all" class="btn btn-success offset-1">Remove all</span>
+                    <div class="input-group mt-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Main</span>
+                        </div>
+                        <input type="text" id="main-name" name="main-name" class="form-control" placeholder="Field name" required>
+                        <input type="text" id="main-link" name="main-link" class="form-control" placeholder="Field link" required>
+                    </div>
+                    <div id="add-here"></div>
+                    <script>
+                        $(document).ready(function() {
+                            const max_fields = 9;
+                            let count = 0;
+                            $('#add-row').click(function() {
+                                if (count <= max_fields) {
+                                    let html = '<div id="field'+count+'" class="input-group mt-3 mb-3">';
+                                        html += '<div class="input-group-prepend">';
+                                        html += '<span class="input-group-text">Field '+(count+1)+'</span>';
+                                        html += '</div>';
+                                        html += '<input type="text" id="name'+count+'" name="name'+count+'" class="form-control" placeholder="Field name" required>';
+                                        html += '<input type="text" id="link'+count+'" name="link'+count+'" class="form-control" placeholder="Field link" required>';
+                                        html += '</div>';
+                                    $('#add-here').append(html);
+                                    ++count;
+                                    $('#add-row').text(`Add row (${10 - count})`);
+                                }
+                            });
+                            $('#remove-all').click(function() {
+                                $('#add-here').empty();
+                                count = 0;
+                                $('#add-row').text(`Add row (${10 - count})`);
+                            });
+                        })
+                    </script>
+                </div>
+                <div class="col-6">
+                    <label>Requirements:</label>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">OS</span>
+                        </div>
+                        <input type="text" id="os" name="os" class="form-control" value="Windows 7/8/10">
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">CPU</span>
+                        </div>
+                        <input type="text" id="cpu" name="cpu" class="form-control">
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">VGA</span>
+                        </div>
+                        <input type="text" id="vga" name="vga" class="form-control">
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">RAM</span>
+                        </div>
+                        <input type="text" id="ram" name="ram" class="form-control">
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">DirectX</span>
+                        </div>
+                        <input type="text" id="directx" name="directx" class="form-control">
+                    </div>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Storage</span>
+                        </div>
+                        <input type="text" id="storage" name="storage" class="form-control">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="form-group">
+                        <label for="guide">Guide:</label><span class="text-danger"> *</span>
+                        <textarea id="guide" name="guide" class="form-control" rows="6" placeholder="Step 1&#10;Step 2&#10;Step 3&#10;..." required></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="form-group">
+                        <label for="embed">Video embed:</label>
+                        <input type="text" id="embed" name="embed" class="form-control" placeholder="&lt;iframe width='720' height='480' src='https://chobit.cc/embed/2cu2b/excdyivm' frameborder='0' allowfullscreen&gt;&lt;/iframe&gt;">
+                    </div>
+                </div>
+            </div>
+            <span id="add-content" class="btn btn-danger mb-3">Add content (3)</span>
+            <span id="remove-all-contents" class="btn btn-success mb-3">Remove all</span>
+            <div id="content-here"></div>
+            <script>
+                $(document).ready(function() {
+                    const max_contents = 2;
+                    let count = 0;
+                    $('#add-content').click(function() {
+                        if (count <= max_contents) {
+                            let html = '<div class="row">';
+                                html += '<div class="col-12">';
+                                html += '<div class="form-group">';
+                                html += '<input type="text" id="name-content'+count+'" name="name-content'+count+'" class="form-control mb-3" placeholder="Name of this content" required>';
+                                html += '<textarea id="content'+count+'" name="content'+count+'" class="form-control" rows="6" placeholder="Your content" required></textarea>';
+                                html += '</div>';
+                                html += '</div>';
+                                html += '</div>';
+                            $('#content-here').append(html);
+                            ++count;
+                            $('#add-content').text(`Add content (${3 - count})`);
+                        }
+                    });
+                    $('#remove-all-contents').click(function() {
+                        $('#content-here').empty();
+                        count = 0;
+                        $('#add-content').text(`Add content (${3 - count})`);
+                    });
+                })
+            </script>
+            <button type="submit" name="submit" class="btn btn-secondary offset-10">Submit</button>
+        </form>
+    </div>
+    <hr>
+
+    <div id="copyright" class="text-right text-white">
+        <p>Copyright &copy; <a href="https://www.facebook.com/100018623917295" target="_blank" class="text-warning">Yume</a>.</p>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
+</body>
+</html>
